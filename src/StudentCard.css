@@ -1,0 +1,290 @@
+/* StudentCard Component Styles */
+
+@keyframes card-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotateX(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3),
+                0 0 0 0 rgba(102, 126, 234, 0);
+  }
+  50% {
+    box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4),
+                0 0 0 10px rgba(102, 126, 234, 0.1);
+  }
+}
+
+.student-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background-size: 200% 200%;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: white;
+  min-width: 360px;
+  max-width: 420px;
+  position: relative;
+  overflow: hidden;
+  animation: card-entrance 0.6s ease-out, gradient-shift 8s ease infinite;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.student-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.student-card:hover::before {
+  opacity: 1;
+}
+
+.student-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  animation: pulse-glow 2s infinite;
+  background-position: 100% 50%;
+}
+
+.card-header {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.card-header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, white, rgba(255, 255, 255, 0.5));
+  transition: width 0.4s ease;
+}
+
+.student-card:hover .card-header::after {
+  width: 100%;
+}
+
+.card-header h2 {
+  margin: 0 0 12px 0;
+  font-size: 28px;
+  font-weight: 800;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.roll-number {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.student-card:hover .roll-number {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.section:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.section h3 {
+  margin: 0 0 18px 0;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.marks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mark-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+.mark-item:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.subject-label {
+  font-weight: 600;
+  font-size: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.mark-value {
+  font-weight: 800;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.results {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.2s ease;
+}
+
+.result-item:hover {
+  transform: translateX(5px);
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.result-label {
+  font-weight: 600;
+  font-size: 16px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.result-value {
+  font-weight: 800;
+  font-size: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.result-value.grade {
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 22px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  font-weight: 900;
+  letter-spacing: 1px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.grade.excellent {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  box-shadow: 0 6px 20px rgba(56, 239, 125, 0.5);
+}
+
+.grade.good {
+  background: linear-gradient(135deg, #4776e6 0%, #8e54e9 100%);
+  box-shadow: 0 6px 20px rgba(142, 84, 233, 0.5);
+}
+
+.grade.average {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  box-shadow: 0 6px 20px rgba(245, 87, 108, 0.5);
+}
+
+.grade.fail {
+  background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+  box-shadow: 0 6px 20px rgba(229, 45, 39, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .student-card {
+    margin: 15px 10px;
+    padding: 25px;
+    min-width: 300px;
+  }
+
+  .card-header h2 {
+    font-size: 24px;
+  }
+
+  .section h3 {
+    font-size: 18px;
+  }
+
+  .mark-item {
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-card {
+    min-width: 280px;
+    padding: 20px;
+  }
+
+  .card-header h2 {
+    font-size: 22px;
+  }
+
+  .result-value.grade {
+    font-size: 20px;
+    padding: 6px 16px;
+  }
+}
