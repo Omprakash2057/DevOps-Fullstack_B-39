@@ -22,47 +22,56 @@ function App() {
     {
       name: 'Mukesh',
       rollNumber: 'CS2024001',
-      marks: [85, 92, 78, 88, 95]
+      marks: [85, 92, 78, 88, 95],
+      image: '/images/mukesh.svg'
     },
     {
       name: 'Radha Krishna',
       rollNumber: 'CS2024002',
-      marks: [95, 98, 96, 94, 97]
+      marks: [95, 98, 96, 94, 97],
+      image: '/images/radha_krishna.svg'
     },
     {
       name: 'Nikhil',
       rollNumber: 'CS2024003',
-      marks: [98, 99, 97, 96, 100]
+      marks: [98, 99, 97, 96, 100],
+      image: '/images/nikhil.svg'
     },
     {
       name: 'Kruthik',
       rollNumber: 'CS2024004',
-      marks: [92, 94, 96, 93, 95]
+      marks: [92, 94, 96, 93, 95],
+      image: '/images/kruthik.svg'
     },
     {
       name: 'Mahesh',
       rollNumber: 'CS2024005',
-      marks: [89, 91, 93, 90, 92]
+      marks: [89, 91, 93, 90, 92],
+      image: '/images/mahesh.svg'
     },
     {
       name: 'Tharun',
       rollNumber: 'CS2024006',
-      marks: [95, 97, 94, 96, 98]
+      marks: [95, 97, 94, 96, 98],
+      image: '/images/tharun.svg'
     },
     {
       name: 'Nikil',
       rollNumber: 'CS2024007',
-      marks: [97, 96, 98, 99, 95]
+      marks: [97, 96, 98, 99, 95],
+      image: '/images/nikil.svg'
     },
     {
       name: 'Siddharth',
       rollNumber: 'CS2024008',
-      marks: [72, 68, 75, 70, 73]
+      marks: [72, 68, 75, 70, 73],
+      image: '/images/siddharth.svg'
     },
     {
       name: 'Vikram Singh',
       rollNumber: 'CS2024009',
-      marks: [55, 58, 52, 60, 57]
+      marks: [55, 58, 52, 60, 57],
+      image: '/images/vikram_singh.svg'
     }
   ];
 
@@ -326,6 +335,7 @@ function App() {
                 rollNumber={student.rollNumber}
                 marks={student.marks}
                 subjects={subjects}
+                image={student.image}
               />
             ))
           ) : (

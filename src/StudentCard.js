@@ -8,7 +8,7 @@ import './StudentCard.css';
  */
 const StudentCard = (props) => {
   // Destructure props to access student data
-  const { name, rollNumber, marks, subjects } = props;
+  const { name, rollNumber, marks, subjects, image } = props;
 
   /**
    * Calculate total marks from the marks array
@@ -69,8 +69,19 @@ const StudentCard = (props) => {
   return (
     <div className="student-card">
       <div className="card-header">
-        <h2>{name}</h2>
-        <span className="roll-number">Roll No: {rollNumber}</span>
+        <div className="student-profile">
+          {image && (
+            <img
+              src={image}
+              alt={`${name}'s profile`}
+              className="student-avatar"
+            />
+          )}
+          <div className="student-info">
+            <h2>{name}</h2>
+            <span className="roll-number">Roll No: {rollNumber}</span>
+          </div>
+        </div>
       </div>
       
       <div className="card-body">

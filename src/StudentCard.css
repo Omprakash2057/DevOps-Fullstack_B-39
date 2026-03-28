@@ -84,8 +84,37 @@
   width: 100%;
 }
 
+.student-profile {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.student-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.student-card:hover .student-avatar {
+  transform: scale(1.08);
+  border-color: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.student-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .card-header h2 {
-  margin: 0 0 12px 0;
+  margin: 0;
   font-size: 28px;
   font-weight: 800;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
